@@ -1,0 +1,32 @@
+{
+    "name": "cordova-plugin-network-provider",
+    "version": "0.0.1",
+    "description": "Cordova plugin that allowed users to get the network provider information.",
+    "cordova": {
+      "id": "cordova-plugin-network-provider",
+      "platforms": [
+        "android"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/MihajaElrich/cordova-plugin-network-provider.git"
+    },
+    "keywords": [
+      "networkProvider",
+      "ecosystem:cordova",
+      "cordova-android"
+    ],
+    "engines": [
+      {
+        "name": "cordova",
+        "version": ">=3.0.0"
+      }
+    ],
+    "author": "Mihaja Elrich",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/MihajaElrich/networkProvider/issues"
+    },
+    "homepage": "https://github.com/MihajaElrich/cordova-plugin-network-provider/"
+  }

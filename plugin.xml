@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-network-provider" version="0.0.1">
+    <name>NetworkProvider</name>
+
+    <description>Cordova plugin that allowed users to get the network provider information.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,networkProvider</keywords>
+    <repo>https://github.com/MihajaElrich/cordova-plugin-network-provider.git</repo>
+    <issue>https://github.com/MihajaElrich/networkProvider/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/networkProvider.js" name="networkProvider">
+        <clobbers target="window.plugins.networkProvider" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="networkProvider">
+                <param name="android-package" value="com.vntechnology.cordova.plugin.networkprovider.networkProvider"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/networkProvider.java" target-dir="src/com/vntechnology/cordova/plugin" />
+    </platform>
+</plugin>
