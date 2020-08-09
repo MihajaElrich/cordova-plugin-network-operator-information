@@ -7,15 +7,15 @@
  */
 
 
-function networkProvider() {}
+function NetworkOperator() {}
 
 
-networkProvider.prototype.getNetworkProviderList = function(successCallback, failureCallback) {
+NetworkOperator.prototype.getNetworksOperator = function(successCallback, failureCallback) {
 	return cordova.exec(
 		successCallback,
 		failureCallback,
-		'networkProvider',
-		'getNetworkProviderList',
+		'NetworkOperator',
+		'getNetworksOperator',
 		[]);
 }
 
@@ -23,13 +23,13 @@ networkProvider.prototype.getNetworkProviderList = function(successCallback, fai
 
 
 // Installation constructor that binds networkProvider to window
-networkProvider.install = function() {
+NetworkOperator.install = function() {
 	if (!window.plugins) {
 	  window.plugins = {};
 	}
-	window.plugins.networkProvider = new networkProvider();
-	return window.plugins.networkProvider;
+	window.plugins.NetworkOperator = new NetworkOperator();
+	return window.plugins.NetworkOperator;
   };
   
-  cordova.addConstructor(networkProvider.install);
+  cordova.addConstructor(NetworkOperator.install);
 
