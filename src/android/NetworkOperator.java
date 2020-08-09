@@ -1,6 +1,6 @@
 package com.vntechnology.cordova.plugin;
 
-
+import android.telephony.TelephonyManager;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.LOG;
@@ -11,8 +11,8 @@ import android.media.*;
 
 public class NetworkOperator extends CordovaPlugin {
 
-    public static final String NPLIST = "getNetworkProviderList";
-    private static final String TAG = "NetworkProvider";
+    public static final String NPLIST = "getNetworksOperator";
+    private static final String TAG = "NetworkOperator";
 
     private Context context;
 
@@ -26,7 +26,7 @@ public class NetworkOperator extends CordovaPlugin {
         if (NPLIST.equals(action)) {
             try {
                 // Get System TELEPHONY service reference
-                TelephonyManager tManager = (TelephonyManager) getBaseContext()
+                TelephonyManager tManager = (TelephonyManager) context
                     .getSystemService(Context.TELEPHONY_SERVICE);
 
                 // Get carrier name (Network Operator Name)
@@ -36,7 +36,7 @@ public class NetworkOperator extends CordovaPlugin {
                 callbackContext.success(carrierName);
                 
             } catch(Exception e) {
-                callbackContext.error(e)
+                //callbackContext.error(e);
                 LOG.d(TAG, "ERROR: " + e);
                 actionState = false;
             }
